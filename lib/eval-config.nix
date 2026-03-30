@@ -44,14 +44,23 @@
   prefix ? [],
 }@evalConfigArgs:
 let
-  evalModulesMinimal = { prefix ? [], modules ? [], specialArgs ? {}, }:
+  evalModulesMinimal = { prefix ? [], modules ? [], specialArgs ? {} }:
     lib.evalModules {
       inherit prefix modules;
 
       class = "openwrt";
 
       specialArgs = {
-        modulesPath = toString (builtins.dirOf modulesLocation);
+        modulesPath =
+          assert lib.assertMsg
+            (builtins.pathExists modulesLocation)
+            "modulesLocation argument for lib.openwrtSystem does not exist! Value: ${modulesLocation}";
+
+          toString (
+            if    (builtins.tryEval (builtins.readFile modulesLocation))
+            then  dirOf modulesLocation
+            else  modulesLocation
+          );
       } // specialArgs;
     };
 
@@ -77,11 +86,10 @@ let
     modules = allUserModules;
   };
 
-  withExtraAttrs = configuration:
-    configuration // {
-      inherit (configuration._module.args) pkgs;
-      inherit lib;
-      extendModules = args: withExtraAttrs (configuration.extendModules args);
-    };
+  withExtraAttrs = configuration: configuration // {
+    inherit (configuration._module.args) pkgs;
+    inherit lib;
+    extendModules = args: withExtraAttrs (configuration.extendModules args);
+  };
 in
   withExtraAttrs openwrtWithUserModules

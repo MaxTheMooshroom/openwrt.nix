@@ -1,5 +1,5 @@
 {
-  description = "An interface for building openwrt images using nix modules";
+  description = "A flake interface for building openwrt images using nix modules";
 
   inputs = {
     nixpkgs-lib.url = ./nixpkgs-lib;
@@ -28,9 +28,7 @@
       systems = lib.systems.flakeExposed;
 
       imports = lib.importDefaultFlakeModules (with inputs; [
-        inputs.lib
-
-        # docs
+        docs
         # templates
         # tests
 

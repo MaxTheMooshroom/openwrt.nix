@@ -3,8 +3,10 @@
 
   outputs = { flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
-      imports = [ flake-parts.flakeModules.flakeModules ];
+      imports = [ flake-parts.flakeModules.modules ];
 
-      flake.flakeModules.default.imports = [];
+      flake.modules.openwrt.all = {
+        imports = [];
+      };
     });
 }

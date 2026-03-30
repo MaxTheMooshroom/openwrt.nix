@@ -9,6 +9,9 @@
 
     packages.url = ./packages;
     packages.inputs.flake-parts.follows = "flake-parts";
+
+    tasks.url = ./tasks;
+    tasks.inputs.flake-parts.follows = "flake-parts";
   };
 
   outputs = { flake-parts, ... }@inputs:
@@ -17,9 +20,12 @@
 
       imports = [ flake-parts.flakeModules.modules ];
 
-      flake.modules.openwrt.all = lib.mkMerge [
-        inputs.misc.modules.openwrt.all
-        inputs.packages.modules.openwrt.all
-      ];
+      flake.modules.openwrt.all = {
+        imports = [
+          inputs.misc.modules.openwrt.all
+          inputs.packages.modules.openwrt.all
+          inputs.tasks.modules.openwrt.all
+        ];
+      };
     });
 }
