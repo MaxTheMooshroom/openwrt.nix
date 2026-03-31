@@ -31,5 +31,7 @@
             ];
           } // builtins.removeAttrs args ["modules"]);
       };
+
+      flake.flakeModules.default.flake.lib.openwrtSystem = self.lib.openwrtSystem;
     });
 }

@@ -13,7 +13,7 @@
 
       flake.modules.openwrt.all = {
         imports = [
-          (import inputs.network-ifaces)
+          inputs.network-ifaces.outPath
         ];
       };
     });

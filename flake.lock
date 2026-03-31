@@ -17,7 +17,8 @@
     "docs": {
       "inputs": {
         "flake-parts": "flake-parts_2",
-        "lib": "lib"
+        "markdown-tool": "markdown-tool",
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "path": "docs",
@@ -30,21 +31,6 @@
       "parent": []
     },
     "eval-config": {
-      "flake": false,
-      "locked": {
-        "path": "eval-config.nix",
-        "type": "path"
-      },
-      "original": {
-        "path": "eval-config.nix",
-        "type": "path"
-      },
-      "parent": [
-        "docs",
-        "lib"
-      ]
-    },
-    "eval-config_2": {
       "flake": false,
       "locked": {
         "path": "eval-config.nix",
@@ -124,42 +110,6 @@
     },
     "flake-parts_3": {
       "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_3"
-      },
-      "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "flake-parts_4": {
-      "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_4"
-      },
-      "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "flake-parts_5": {
-      "inputs": {
         "nixpkgs-lib": [
           "nixpkgs-lib"
         ]
@@ -178,9 +128,9 @@
         "type": "github"
       }
     },
-    "flake-parts_6": {
+    "flake-parts_4": {
       "inputs": {
-        "nixpkgs-lib": "nixpkgs-lib_5"
+        "nixpkgs-lib": "nixpkgs-lib_3"
       },
       "locked": {
         "lastModified": 1772408722,
@@ -199,28 +149,10 @@
     "lib": {
       "inputs": {
         "eval-config": "eval-config",
-        "flake-parts": "flake-parts_3",
-        "modules": "modules"
-      },
-      "locked": {
-        "path": "../lib",
-        "type": "path"
-      },
-      "original": {
-        "path": "../lib",
-        "type": "path"
-      },
-      "parent": [
-        "docs"
-      ]
-    },
-    "lib_2": {
-      "inputs": {
-        "eval-config": "eval-config_2",
         "flake-parts": [
           "flake-parts"
         ],
-        "modules": "modules_2"
+        "modules": "modules"
       },
       "locked": {
         "path": "lib",
@@ -232,30 +164,23 @@
       },
       "parent": []
     },
-    "misc": {
-      "inputs": {
-        "flake-parts": [
-          "docs",
-          "lib",
-          "modules",
-          "flake-parts"
-        ]
-      },
+    "markdown-tool": {
+      "flake": false,
       "locked": {
-        "path": "misc",
-        "type": "path"
+        "lastModified": 1765457933,
+        "narHash": "sha256-hBRHPBwYbnoZ2iawG9mXSnjpAWH0kIqstPaKH4R//gU=",
+        "owner": "johnlepikhin",
+        "repo": "markdown-tool",
+        "rev": "bb29e670edaac259161fbcbd85f278a5588163eb",
+        "type": "github"
       },
       "original": {
-        "path": "misc",
-        "type": "path"
-      },
-      "parent": [
-        "docs",
-        "lib",
-        "modules"
-      ]
+        "owner": "johnlepikhin",
+        "repo": "markdown-tool",
+        "type": "github"
+      }
     },
-    "misc_2": {
+    "misc": {
       "inputs": {
         "flake-parts": [
           "lib",
@@ -292,47 +217,10 @@
         "type": "path"
       },
       "parent": [
-        "docs",
-        "lib"
-      ]
-    },
-    "modules_2": {
-      "inputs": {
-        "flake-parts": "flake-parts_6",
-        "misc": "misc_2",
-        "packages": "packages_2",
-        "tasks": "tasks_2"
-      },
-      "locked": {
-        "path": "../modules",
-        "type": "path"
-      },
-      "original": {
-        "path": "../modules",
-        "type": "path"
-      },
-      "parent": [
         "lib"
       ]
     },
     "network-ifaces": {
-      "flake": false,
-      "locked": {
-        "path": "network-interfaces.nix",
-        "type": "path"
-      },
-      "original": {
-        "path": "network-interfaces.nix",
-        "type": "path"
-      },
-      "parent": [
-        "docs",
-        "lib",
-        "modules",
-        "tasks"
-      ]
-    },
-    "network-ifaces_2": {
       "flake": false,
       "locked": {
         "path": "network-interfaces.nix",
@@ -350,16 +238,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774388614,
-        "narHash": "sha256-tFwzTI0DdDzovdE9+Ras6CUss0yn8P9XV4Ja6RjA+nU=",
+        "lastModified": 1774874205,
+        "narHash": "sha256-VE0in9sSq+lG7CnUuTmTDN40x9yro31jbbKf278KfEI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1073dad219cb244572b74da2b20c7fe39cb3fa9e",
+        "rev": "56ed9a39b84feaee9624111dc86869d19f4c22f3",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-25.11",
+        "ref": "nixos-25.11-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -410,40 +298,10 @@
       }
     },
     "nixpkgs-lib_4": {
-      "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgs-lib_5": {
-      "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "type": "github"
-      }
-    },
-    "nixpkgs-lib_6": {
       "inputs": {
         "ext-attrsets": "ext-attrsets",
         "ext-modules": "ext-modules",
-        "nixpkgs-lib": "nixpkgs-lib_7"
+        "nixpkgs-lib": "nixpkgs-lib_5"
       },
       "locked": {
         "path": "nixpkgs-lib",
@@ -455,7 +313,7 @@
       },
       "parent": []
     },
-    "nixpkgs-lib_7": {
+    "nixpkgs-lib_5": {
       "locked": {
         "dir": "lib",
         "lastModified": 1764521362,
@@ -473,30 +331,23 @@
         "type": "github"
       }
     },
-    "packages": {
-      "inputs": {
-        "flake-parts": [
-          "docs",
-          "lib",
-          "modules",
-          "flake-parts"
-        ]
-      },
+    "nixpkgs_2": {
       "locked": {
-        "path": "packages",
-        "type": "path"
+        "lastModified": 1774799055,
+        "narHash": "sha256-Tsq9BCz0q47ej1uFF39m4tuhcwru/ls6vCCJzutEpaw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "107cba9eb4a8d8c9f8e9e61266d78d340867913a",
+        "type": "github"
       },
       "original": {
-        "path": "packages",
-        "type": "path"
-      },
-      "parent": [
-        "docs",
-        "lib",
-        "modules"
-      ]
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
     },
-    "packages_2": {
+    "packages": {
       "inputs": {
         "flake-parts": [
           "lib",
@@ -521,10 +372,10 @@
       "inputs": {
         "devshells": "devshells",
         "docs": "docs",
-        "flake-parts": "flake-parts_5",
-        "lib": "lib_2",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-lib": "nixpkgs-lib_6",
+        "flake-parts": "flake-parts_3",
+        "lib": "lib",
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-lib": "nixpkgs-lib_4",
         "templates": "templates",
         "tests": "tests"
       }
@@ -532,35 +383,11 @@
     "tasks": {
       "inputs": {
         "flake-parts": [
-          "docs",
           "lib",
           "modules",
           "flake-parts"
         ],
         "network-ifaces": "network-ifaces"
-      },
-      "locked": {
-        "path": "tasks",
-        "type": "path"
-      },
-      "original": {
-        "path": "tasks",
-        "type": "path"
-      },
-      "parent": [
-        "docs",
-        "lib",
-        "modules"
-      ]
-    },
-    "tasks_2": {
-      "inputs": {
-        "flake-parts": [
-          "lib",
-          "modules",
-          "flake-parts"
-        ],
-        "network-ifaces": "network-ifaces_2"
       },
       "locked": {
         "path": "tasks",

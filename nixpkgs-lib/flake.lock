@@ -24,18 +24,52 @@
       },
       "parent": []
     },
-    "nixpkgs-lib": {
+    "ext-nixos": {
+      "flake": false,
       "locked": {
-        "lastModified": 1774143066,
-        "narHash": "sha256-spLYnBa2C/jl6ZH2AjioJSATdp5PeE+sUNPB2ZZ1/Sg=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "0d0fa1a6c2ede45c2fb272ea7abcd018bdb2f3b6",
+        "path": "nixos.nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "nixos.nix",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "make-options-doc": {
+      "flake": false,
+      "locked": {
+        "dir": "nixos/lib/make-options-doc",
+        "lastModified": 1774874205,
+        "narHash": "sha256-VE0in9sSq+lG7CnUuTmTDN40x9yro31jbbKf278KfEI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "56ed9a39b84feaee9624111dc86869d19f4c22f3",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
+        "dir": "nixos/lib/make-options-doc",
+        "owner": "NixOS",
+        "ref": "nixos-25.11-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib": {
+      "locked": {
+        "dir": "lib",
+        "lastModified": 1774874205,
+        "narHash": "sha256-VE0in9sSq+lG7CnUuTmTDN40x9yro31jbbKf278KfEI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "56ed9a39b84feaee9624111dc86869d19f4c22f3",
+        "type": "github"
+      },
+      "original": {
+        "dir": "lib",
+        "owner": "NixOS",
+        "ref": "nixos-25.11-small",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -43,6 +77,8 @@
       "inputs": {
         "ext-attrsets": "ext-attrsets",
         "ext-modules": "ext-modules",
+        "ext-nixos": "ext-nixos",
+        "make-options-doc": "make-options-doc",
         "nixpkgs-lib": "nixpkgs-lib"
       }
     }

@@ -28,11 +28,18 @@
       systems = lib.systems.flakeExposed;
 
       imports = lib.importDefaultFlakeModules (with inputs; [
+        inputs.lib
         docs
         # templates
         # tests
 
         # devshells
       ]);
+
+      # include some references
+      flake.openwrtConfigurations = {
+        # used to generate docs
+        noUserModules = self.lib.openwrtSystem { modules = []; };
+      };
     });
 }
